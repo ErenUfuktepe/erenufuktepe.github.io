@@ -30,7 +30,7 @@ new svgMap({
   maxZoom: 10,
   initialZoom: 1.06,
   zoomScaleSensitivity: 0.2,
-  mouseWheelZoomEnabled: false,
+  mouseWheelZoomEnabled: true,
 
   flagType: 'image',
   flagURL: 'https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/{0}.svg',
