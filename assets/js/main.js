@@ -155,18 +155,30 @@ function displaySkills(){
 }
 
 function songStory(){
-  const stories = [["Eric Clapton - Tears In Heaven", "https://www.youtube.com/watch?v=JxPj3GAYYZ0","Eric Clapton wrote the song Tears in Heaven when his 4 year-old son Connor fell from the window of his house on the 53rd floor."],
-                   ["Evanescence - Hello","https://www.youtube.com/watch?v=Ih61MJ72v1Y","This song was written by a painful incident that happened to lead singer, Amy Lee. Her mum left her 3-year-old sister alone in the tub and, her sister died due to getting drowned in the bathtub. When this happens, Amy was 6. This track was never sung at any concert."] 
-                   ]; 
-  let storyHTML = '';
-  let count = 1 ;
-  stories.forEach(element => {
+  if(document.getElementById('song-stories') == null){
+    //Do nothing
+  }else{
+    const stories = [["Eric Clapton - Tears In Heaven", "https://www.youtube.com/watch?v=JxPj3GAYYZ0","Eric Clapton wrote the song Tears in Heaven when his 4 year-old son Connor fell from the window of his house on the 53rd floor."],
+                     ["Evanescence - Hello","https://www.youtube.com/watch?v=Ih61MJ72v1Y","This song was written by a painful incident that happened to lead singer, Amy Lee. Her mum left her 3-year-old sister alone in the tub and, her sister died due to getting drowned in the bathtub. When this happens, Amy was 6. This track was never sung at any concert."] 
+                    ,["The Cranberries - Zombie","https://www.youtube.com/watch?v=6Ejga4kJUts","The Cranberries wrote this song after two children died in an attack by the IRA terrorist organization in Warrington, England."]
+                    ,["Soul Asylum - Runaway Train","https://www.youtube.com/watch?v=NRtvqT_wMeY","This song, made for missing people, has been gifted to families of missing people. In different countries, different photos have been used in music clips."]
+                    ,["The Eagles - Hotel California","https://www.youtube.com/watch?v=5EHyht_Kx5I","“It’s basically a song about the dark underbelly of the American dream and about excess in America, which is something we knew a lot about,” Henley said in a 2002 interview with 60 Minutes."]
+                    ,["Ed Sheeran - The A Team","https://www.youtube.com/watch?v=UAWcs5H-qgQ","The A team is about a sex worker Ed Sheeran met while volunteering for a homeless shelter. She's addicted to drugs and her name is Angel.s“The A team” refers to specific drugs; crack cocaine, heroin, etc are class A drugs."]
+                    ,["Foster The People - Pumped up Kicks","https://www.youtube.com/watch?v=SDTZ7iX4vTQ","“Pumped Up Kicks” is also a song about a kid preparing to shoot his classmates at school."]
+                    ,["Green Day - Wake Me Up When September Ends","https://www.youtube.com/watch?v=NU9JoFKlaZ0","Green Day lead singer Billie Joe Armstrong wrote this song about his father, who died of cancer on September 1, 1982 when Billie was just 10 years old."]
+                    ,["Paul McCartney - Blackbird ","https://www.youtube.com/watch?v=5mJYYVM-nj4","Blackbird was inspired by the racial tensions that exploded in the US on spring 1968 as a symbolic way to support the efforts of the Civil Rights Movement. McCartney underlined also that “bird” is a British slang often used for “girl”, which would make “blackbird” become “black girl”."]
+                    ,["The Police - Every Breath You Take","https://www.youtube.com/watch?v=OMOGaugKpzs","Most people just think that this song is a love song. However, It is about an obsessive stalker."]
+                    ,["The Beatles - Hey Jude","https://www.youtube.com/watch?v=A_MjCqQoLLA","Paul McCartney wrote this as “Hey Jules,” it was meant to comfort John Lennon’s 5-year-old son Julian during his parents’ divorce. "]               
+                    ]; 
+    let storyHTML = '';
+    let count = 1 ;
+    stories.forEach(element => {
     let story = '<div class="col-lg-12"><a href="'+element[1]+'" style="font-weight: bolder; font-size: large;" target="_blank">'+count +'. '+element[0]+'</a><p>'+element[2]+'</p></div>';
     storyHTML = storyHTML + story;
     document.getElementById('song-stories').innerHTML = storyHTML;
     count = count + 1;
   })
-
+  }
 }
 
 $("#turkish-relax").click(function(event) {
