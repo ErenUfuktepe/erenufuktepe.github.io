@@ -2983,18 +2983,18 @@ svgMap.prototype.createMap = function () {
       const countries = ['US','TR','KW','FR','IT','NP','HU','GR','MK','AT','AE','JO'];
       var countryID = countryElement.getAttribute('data-id');
       var text = '';
-      const countryMap = [['US',''],
-                          ['TR',''],
-                          ['KW',''],
-                          ['FR',''],
-                          ['IT',''],
-                          ['NP',''],
-                          ['HU',''],
-                          ['GR',''],
-                          ['MK',''],
-                          ['AT',''],
-                          ['AE',''],
-                          ['JO','']];
+      const countryMap = [['US',"I was born in the United State in Missouri, but I didn't have chance to travel much. I have traveled Oklahoma, Chicago and Missouri."],
+                          ['TR','I grew up in Turkey in Izmir and I traveled most of the places in Turkey. You should go to Istanbul, Izmir, and Nevsehir.'],
+                          ['KW',"Kuwait is the richest country in the world. It generally a hot country, but since they're using a lot of air conditions, everyone carrying a jacket with them. It is a great country for those who love shopping."],
+                          ['FR','In France, I traveled to Paris, Nice, and Monte Carlo.'],
+                          ['IT','I traveled to Italy with a guided tour, so I had the chance to travel a lot with limited time. I traveled to Rome, Venice, Milan, Florence, Napoli, Bologna, Torino, Siena, and Pisa. I have traveled to different cities in different countries but Florence is the best city that I experienced.'],
+                          ['NP','In Nepal, I only traveled to two cities which are Pokhara and Kathmandu. Both cities are different from each other. Although Pokhara is a city full of natural beauty, there was a lot of air pollution in Kathmandu.'],
+                          ['HU','In Hungary, I only have a chaced to travel to Budapest. It is a perfect city for drinking.'],
+                          ['GR','While I was going to Macedonia for a festival with my folklore dance club, we stop by in Greece. I got a chance to travel Thessaloniki. '],
+                          ['MK','I went to Macedonia for an international festival with my folklore dance club.'],
+                          ['AT','In Austria, I could only travel to  Vienna.'],
+                          ['AE','In the United Arab Emirates, I could only travel to Dubai.'],
+                          ['JO','In Jordan, I traveled to Petra. Also, I got the chance to swim in the Dead Sea, and it was odd.']];
 
       if(countries.includes(countryID)){
         countryMap.forEach(element => 
@@ -3006,38 +3006,38 @@ svgMap.prototype.createMap = function () {
         var countryName = this.getCountryName(countryID);
         var visitedHTML ='<div class="container"> \
                             <div class="journal-block"> \
+                            <div class="container"> \
+                                <div class="section-title text-center"> \
+                                    <h2>'+ countryName +'</h2> \
+                                </div> \
+                              </div> \
                               <div class="row"> \
                                 <div class="col-lg-4 col-md-6"> \
                                   <div class="journal-info mb-30"> \
-                                    <a href="blog-single.html"><img src="assets/img/'+countryID+'/1.jpg" class="img-responsive" alt="img"></a> \
+                                    <a><img src="assets/img/'+countryID+'/1.jpg" class="img-responsive" alt="img"></a> \
                                     <div class="journal-txt"> \
                                     </div> \
                                   </div> \
                                 </div> \
                                 <div class="col-lg-4 col-md-6"> \
                                   <div class="journal-info mb-30"> \
-                                    <a href="blog-single.html"><img src="assets/img/'+countryID+'/2.jpg" class="img-responsive" alt="img"></a> \
+                                    <a><img src="assets/img/'+countryID+'/2.jpg" class="img-responsive" alt="img"></a> \
                                     <div class="journal-txt"> \
                                     </div> \
                                   </div> \
                                 </div> \
                                 <div class="col-lg-4 col-md-6"> \
                                   <div class="journal-info mb-30"> \
-                                    <a href="map.html"><img src="assets/img/'+countryID+'/3.jpg" class="img-responsive" alt="img"></a> \
+                                    <a><img src="assets/img/'+countryID+'/3.jpg" class="img-responsive" alt="img"></a> \
                                     <div class="journal-txt"> \
                                     </div> \
                                   </div> \
                                 </div> \
                               </div> \
                             </div> \
-                          </div>' +          
-                          '<div class="container"> \
-                            <div class="section-title text-center"> \
-                                <h2>'+ countryName +'</h2> \
-                            </div> \
                           </div> \
                           <div class="container"> \
-                            <div >&emsp; &emsp;'+ text +'</div> \
+                            <div style="text-align:center;">'+ text +'</div> \
                           </div>';
         document.getElementsByClassName('visited')[0].innerHTML= visitedHTML;
       }else{
