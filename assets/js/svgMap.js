@@ -2972,6 +2972,7 @@ svgMap.prototype.createMap = function () {
       this.moveTooltip(e);
       const countries = ['US','TR','KW','FR','IT','NP','HU','GR','MK','AT','AE','JO'];
       var text = '';
+      /*
       const countryMap = [['US',"I was born in the United State in Missouri, but I didn't have chance to travel much. I have traveled Oklahoma, Chicago and Missouri."],
                           ['TR','I grew up in Turkey in Izmir and I traveled most of the places in Turkey. You should go to Istanbul, Izmir, and Nevsehir.'],
                           ['KW',"Kuwait is the richest country in the world. It generally a hot country, but since they're using a lot of air conditions, everyone carrying a jacket with them. It is a great country for those who love shopping."],
@@ -3032,6 +3033,7 @@ svgMap.prototype.createMap = function () {
       }else{
         document.getElementsByClassName('visited')[0].innerHTML= '';    
       }
+      */
     }.bind(this));
 	
     countryElement.addEventListener('mouseenter', function (e) {
@@ -3047,7 +3049,7 @@ svgMap.prototype.createMap = function () {
     countryElement.addEventListener('mouseleave', function () {
       this.hideTooltip();
     }.bind(this));
-    
+  /*
     countryElement.addEventListener('click',function(){
       const countries = ['US','TR','KW','FR','IT','NP','HU','GR','MK','AT','AE','JO'];
       var countryID = countryElement.getAttribute('data-id');
@@ -3113,7 +3115,7 @@ svgMap.prototype.createMap = function () {
         document.getElementsByClassName('visited')[0].innerHTML= '';    
       }
     }.bind(this));
-
+*/
   }.bind(this));
 
   // Expose instance
@@ -3991,3 +3993,49 @@ svgMap.prototype.getCountryName = function (countryID) {
   }
 })(window, document)
 //# sourceMappingURL=svgMap.js.map
+
+var svgMapDataGPD = {
+  data: {
+    isVisited:{
+      flag :false,
+      color : ''
+    } 
+  },
+
+  values:{
+    US: {isVisited:true, color: '#0b4297'},
+    TR: {isVisited:true, color: '#bf2410'},
+    KW: {isVisited:true, color: '#00773A'},
+    FR: {isVisited:true, color: '#012690'},
+    IT: {isVisited:true, color: '#319000'},
+    NP: {isVisited:true, color: '#d6133a'},
+    HU: {isVisited:true, color: '#356a41'},
+    GR: {isVisited:true, color: '#0D5BA9'},
+    MK: {isVisited:true, color: '#e7c816'},
+    AT: {isVisited:true, color: '#f30001'},
+    AE: {isVisited:true, color: '#00773A'},
+    JO: {isVisited:true, color: '#00773A'},
+
+  }
+}
+
+new svgMap({
+
+  targetElementID: 'svgMapExample',
+  minZoom: 1,
+  maxZoom: 10,
+  initialZoom: 1.06,
+  zoomScaleSensitivity: 0.2,
+  mouseWheelZoomEnabled: true,
+
+  flagType: 'image',
+  flagURL: 'https://cdn.jsdelivr.net/gh/hjnilsson/country-flags@latest/svg/{0}.svg',
+  hideFlag: false,
+  noDataText: '',
+
+  countries: {
+    EH: true
+  },
+  data: svgMapDataGPD
+
+});
